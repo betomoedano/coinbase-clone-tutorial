@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, ScrollView, Image } from 'react-native';
 import Colors from '../constants/Colors';
 import CBButton from '../components/CBButton';
 
+import { WatchlistState } from '../store/reducers/watchlist';
+import { useSelector, useDispatch } from 'react-redux';
+import * as watchlistActions from '../store/actions/watchlist';
+
 const Home = () => {
+
+  const dispatch = useDispatch();
+
+  const loadData = () => {
+    try {
+      dispatch(watchlistActions.fetchCoinData());
+    }   catch (err) {
+      console.log(err);
+    }
+  }
+
+  useEffect(() => {
+    loadData();
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView 
