@@ -7,7 +7,17 @@ import { WatchlistState } from '../store/reducers/watchlist';
 import { useSelector, useDispatch } from 'react-redux';
 import * as watchlistActions from '../store/actions/watchlist';
 
+import Watchlist from '../components/Whatchlist'
+
+interface RootState {
+    watchlist: WatchlistState;
+}
+
 const Home = () => {
+
+  const watchlistData = useSelector(
+    (state: RootState) => state.watchlist.watchlistData
+  )
 
   const dispatch = useDispatch();
 
@@ -35,6 +45,7 @@ const Home = () => {
         <Text style={styles.title}>Welcome to Coinbase!</Text>
         <Text style={styles.subTitle}>Make your first investment today</Text>
         <CBButton title="Get Started" />
+        <Watchlist coinData={watchlistData}/>
       </ScrollView>
     </SafeAreaView>
   );
