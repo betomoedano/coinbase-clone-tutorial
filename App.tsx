@@ -5,9 +5,11 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
 
 import watchlistReducer from './src/store/reducers/watchlist';
+import topmoversReducer from './src/store/reducers/topmovers';
 
 const rootReducer = combineReducers({
   watchlist: watchlistReducer,
+  topmovers: topmoversReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
