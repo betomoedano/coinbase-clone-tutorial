@@ -10,7 +10,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as watchlistActions from '../store/actions/watchlist';
 import * as topmoversActions from '../store/actions/topmovers';
 
+
 import Watchlist from '../components/Whatchlist'
+import TopMoversList from '../components/TopMoversList';
 
 interface RootState {
     watchlist: WatchlistState;
@@ -26,9 +28,7 @@ const Home = () => {
   const topMoversData = useSelector(
     (state: RootState) => state.topmovers.topMoversData
   )
-
-  //console.log(topMoversData)
-
+  
   const dispatch = useDispatch();
 
   const loadData = () => {
@@ -57,6 +57,7 @@ const Home = () => {
         <Text style={styles.subTitle}>Make your first investment today</Text>
         <CBButton title="Get Started" />
         <Watchlist coinData={watchlistData}/>
+        <TopMoversList coinData={topMoversData}/>
       </ScrollView>
     </SafeAreaView>
   );
