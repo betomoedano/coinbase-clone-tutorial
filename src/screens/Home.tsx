@@ -5,10 +5,12 @@ import CBButton from '../components/CBButton';
 
 import { WatchlistState } from '../store/reducers/watchlist';
 import { TopmoversState } from '../store/reducers/topmovers';
+import { NewsState } from '../store/reducers/news';
 import { useSelector, useDispatch } from 'react-redux';
 
 import * as watchlistActions from '../store/actions/watchlist';
 import * as topmoversActions from '../store/actions/topmovers';
+import * as newsActions from '../store/actions/news';
 
 
 import Watchlist from '../components/Whatchlist'
@@ -17,6 +19,7 @@ import TopMoversList from '../components/TopMoversList';
 interface RootState {
     watchlist: WatchlistState;
     topmovers: TopmoversState;
+    news: NewsState;
 }
 
 const Home = () => {
@@ -28,13 +31,19 @@ const Home = () => {
   const topMoversData = useSelector(
     (state: RootState) => state.topmovers.topMoversData
   )
+
+  const newsData = useSelector(
+    (state: RootState) => state.news.newsData
+  )
   
+  console.log(newsData)
   const dispatch = useDispatch();
 
   const loadData = () => {
     try {
       dispatch(watchlistActions.fetchCoinData());
       dispatch(topmoversActions.fetchTopMoversData());
+      dispatch(newsActions.fetchNewsData());
     }   catch (err) {
       console.log(err);
     }
