@@ -7,6 +7,9 @@ import { WatchlistState } from '../store/reducers/watchlist';
 import { TopmoversState } from '../store/reducers/topmovers';
 import { NewsState } from '../store/reducers/news';
 import { useSelector, useDispatch } from 'react-redux';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../navigation/AppNavigator';
+
 
 import * as watchlistActions from '../store/actions/watchlist';
 import * as topmoversActions from '../store/actions/topmovers';
@@ -15,6 +18,7 @@ import * as newsActions from '../store/actions/news';
 
 import Watchlist from '../components/Whatchlist'
 import TopMoversList from '../components/TopMoversList';
+import NewsList from '../components/NewsList';
 
 interface RootState {
     watchlist: WatchlistState;
@@ -22,7 +26,16 @@ interface RootState {
     news: NewsState;
 }
 
-const Home = () => {
+type HomeScreenNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'HomeScreen'
+>;
+
+type Props = {
+  navigation: HomeScreenNavigationProp;
+};
+
+const Home = ({ navigation }: Props) => {
 
   const watchlistData = useSelector(
     (state: RootState) => state.watchlist.watchlistData
@@ -53,6 +66,10 @@ const Home = () => {
     loadData();
   }, []);
 
+  const viewMoreHandler = () => {
+    navigation.navigate('News');
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView 
@@ -67,9 +84,16 @@ const Home = () => {
         <CBButton title="Get Started" />
         <Watchlist coinData={watchlistData}/>
         <TopMoversList coinData={topMoversData}/>
+        <NewsList isHomeScreen={true} newsData={newsData} viewMoreHandler={viewMoreHandler}/>
       </ScrollView>
     </SafeAreaView>
   );
+};
+
+export const screenOptions = () => {
+  return {
+    headerShown: false,
+  };
 };
 
 const styles = StyleSheet.create({
