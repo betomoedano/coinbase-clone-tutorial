@@ -1,5 +1,27 @@
 # Coinbase Clone 
 
-### you can check out the videos for this tutorial in my [**channel**](https://www.youtube.com/channel/UCzkDuc3rSDyEZYo3NoHzalw)
+## you can check out the videos for this tutorial in my [**channel**](https://www.youtube.com/channel/UCzkDuc3rSDyEZYo3NoHzalw)
 
-![Group 3534](https://user-images.githubusercontent.com/43630417/167964211-bc5b047c-c5d8-4af1-8fcc-3d9d9f2afc04.png)
+![thumbnail](https://i.ytimg.com/vi/rS_-xWOeP5o/maxresdefault.jpg)
+
+## Please consider following me:
+
+[**Code With Beto**](http://codewithbeto.vercel.app/)
+
+[**YouTube**](https://www.youtube.com/c/BetoMoedano)
+
+[**Twitch**](https://www.twitch.tv/betomoedano)
+
+[**Github**](https://github.com/betomoedano)
+
+[**linkedin**](https://www.linkedin.com/in/betomoedano)
+
+[**Medium**](https://medium.com/@betomoedano01)
+
+[**Discord**](https://discord.com/invite/dbYfWFw862)
+
+[**Twitter**](https://twitter.com/betomoedano)
+
+[**Instagram**](https://www.instagram.com/betomoedano)
+
+[**Figma**](https://www.figma.com/@betomoedano)
